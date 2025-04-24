@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Cocktail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    }
+    .cocktail-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      color: white;
+    }
+    .cocktail-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    h1 {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cocktail-container">
+    <h1><%= name %></h1>
+    <img class="cocktail-img" src="<%= image %>" alt="<%= name %>">
+    <p><strong>Category:</strong> <%= category %></p>
+    <p><strong>Alcoholic:</strong> <%= alcoholic %></p>
+    <strong>Ingredients:</strong> <ul>
+        <% ingredients.forEach(function(ingredient) { %>
+            <li><%= ingredient %></li>
+        <% }); %>
+    </ul>
+    <p><strong>Instructions:</strong> <%= instructions %></p>
+  </div>
+
+</body>
+</html>
